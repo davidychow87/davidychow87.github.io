@@ -4,8 +4,8 @@
 * and open the template in the editor.
 */
 var canvas = document.getElementById('canvas');
-var width = 700;
-var height = 700;
+var width = 800;
+var height = 800;
 canvas.width = width;
 canvas.height = height;
 var ctx = canvas.getContext('2d');
