@@ -4,8 +4,8 @@
 * and open the template in the editor.
 */
 var canvas = document.getElementById('canvas');
-var width = 700;
-var height = 700;
+var width = 600;
+var height = 600;
 canvas.width = width;
 canvas.height = height;
 var ctx = canvas.getContext('2d');
@@ -39,7 +39,7 @@ document.addEventListener("mouseup", mouseUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 //        
 function mouseDownHandler(e) {
-    if(e.clientX > canvas.offsetLeft && e.clientX < (canvas.offsetLeft + 700) && e.clientY > canvas.offsetTop && e.clientY < canvas.offsetTop + 700) {
+    if(e.clientX > canvas.offsetLeft && e.clientX < (canvas.offsetLeft + 600) && e.clientY > canvas.offsetTop && e.clientY < canvas.offsetTop + 600) {
         mouseIsDown = true;
         firstX = e.clientX - canvas.offsetLeft;
         firstY = e.clientY - canvas.offsetTop;
