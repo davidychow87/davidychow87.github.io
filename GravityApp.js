@@ -1,11 +1,9 @@
 /* 
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
+* Author: David Chow (cchow@fredhutch.org)
 */
 var canvas = document.getElementById('canvas');
-var width = 600;
-var height = 600;
+var width = 550;
+var height = 550;
 canvas.width = width;
 canvas.height = height;
 var ctx = canvas.getContext('2d');
@@ -39,7 +37,7 @@ document.addEventListener("mouseup", mouseUpHandler, false);
 document.addEventListener("mousemove", mouseMoveHandler, false);
 //        
 function mouseDownHandler(e) {
-    if(e.clientX > canvas.offsetLeft && e.clientX < (canvas.offsetLeft + 600) && e.clientY > canvas.offsetTop && e.clientY < canvas.offsetTop + 600) {
+    if(e.clientX > canvas.offsetLeft && e.clientX < (canvas.offsetLeft + width) && e.clientY > canvas.offsetTop && e.clientY < canvas.offsetTop + height) {
         mouseIsDown = true;
         firstX = e.clientX - canvas.offsetLeft;
         firstY = e.clientY - canvas.offsetTop;
@@ -52,7 +50,7 @@ function mouseDownHandler(e) {
 
 function mouseUpHandler(e) {
 
-    if(e.clientX > canvas.offsetLeft && e.clientX < (canvas.offsetLeft + 700) && e.clientY > canvas.offsetTop && e.clientY < canvas.offsetTop + 700) {
+    if(e.clientX > canvas.offsetLeft && e.clientX < (canvas.offsetLeft + width) && e.clientY > canvas.offsetTop && e.clientY < canvas.offsetTop + height) {
         mouseIsDown = false;
         lastX = e.clientX - canvas.offsetLeft;
         lastY = e.clientY - canvas.offsetTop;
@@ -124,9 +122,9 @@ function showVelocity(thisBall) {
         ctx.font = "bold 16px Comic Sans MS";
         ctx.fillStyle = "#FF0000";
         if(thisBall === null) {
-            ctx.fillText("Velocity of Latest Ball (pixels/sec): ", 8, 30);
+            ctx.fillText("Velocity of Latest Ball (pixels/sec): ", 8, 80);
         } else {
-            ctx.fillText("Velocity of Latest Ball (pixels/sec): " + velocity, 8, 60);
+            ctx.fillText("Velocity of Toggled Ball (pixels/sec): " + velocity, 8, 80);
         }
         
 }
@@ -218,18 +216,21 @@ function centerDistance(thisBall) {
 
 //only inbounds balls can be selected
 function toggleInbounds() {
+    
     var current = front;
-    while(current.selected !== true) {
-        current = current.next;
-    }
-    if(centerDistance(current.Ball) > 0.5 * width) {
-        current.selected = false;
-        if(current.next !== null) {
+    if (current!== null) {
+        while(current.selected !== true) {
             current = current.next;
-        } else {
-            current = front;
         }
-        current.selected = true;
+        if(centerDistance(current.Ball) > 0.5 * width) {
+            current.selected = false;
+            if(current.next !== null) {
+                current = current.next;
+            } else {
+                current = front;
+            }
+            current.selected = true;
+        }
     }
 }
 
@@ -242,7 +243,7 @@ function countBalls() {
     }
     ctx.font = "bold 16px Comic Sans MS";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText("Ball Count: " + count, 8, 100);
+    ctx.fillText("Ball Count: " + count, 8, 60);
     
 }
 
