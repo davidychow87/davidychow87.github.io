@@ -10,6 +10,8 @@ and open the template in the editor.
 
 .controls {
     display: inline-block;
+    position: relative;
+    left: 25px;
 }
 
 * { padding: 0; margin: 30; }
