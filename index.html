@@ -8,44 +8,58 @@
 </head>
 <body>
 
-<canvas align="left" id="canvas"></canvas>
+    <h5>Gravity Simulator by David Chow (cchow@fredhutch.org)</h5>
+    
+<canvas id="canvas"></canvas>
 <br>
     
 <div class="controls">
-    <input id="massSlider" style="position:relative; left: 3px;" type="range"  min="1" max="1000" value ="100" step="1" onchange="changeSlider(this.value);"/>
-    <p>Mass</p>
+    <div class='descript'>
+        <input id="massSlider" style="position:relative; left: 3px;" type="range"  min="1" max="1000" value ="100" step="1" onchange="changeSlider(this.value);"/>
+        <p class='id'>&nbsp &nbsp &nbsp Mass</p>
+    </div>
 </div>
 
 <div class="controls">
     <!-- Switch for checkStatic -->
-    <label class="switch" style="position:relative; left: 30px;">
-      <input type="checkbox" id="checkStatic">
-      <div class="slider round"></div>
-    </label>
-    <p>Static</p>
+    
+    <div class='descript'>
+        <label class="switch" style="position:relative; left: 30px;">
+          <input type="checkbox" id="checkStatic">
+          <div class="slider round"></div>
+        </label>
+        <p class='id'>&nbsp   Static</p>
+    </div>
 </div>
 
 <div class="controls">
-    <!-- Switch for checkStatic -->
-    <label class="switch" style="position:relative; left: 30px;">
-      <input type="checkbox" id="checkGravity" checked="checked">
-      <div class="slider round"></div>
-    </label>
-    <p>Gravity</p>
+     <div class='descript'>
+        <!-- Switch for checkStatic -->
+        <label class="switch" style="position:relative; left: 30px;">
+          <input type="checkbox" id="checkGravity" checked="checked">
+          <div class="slider round"></div>
+        </label>
+        <p class='id'>&nbsp Gravity</p>
+     </div>
 </div>
 
 
-<br>
-<br>
+
 <!--<p style="position:absolute; left: 600px;">Mass</p>
 <p style="position:absolute; left: 750px;">Gravity</p>
 <p style="position:absolute; left: 850px;">Static</p> -->
 
-    <p align="left">- Click-drag to throw a new ball</p>   
-     <p align="left">- Use the 'Mass' slider to change the mass of the ball next ball</p>    
-     <p align="left">- Toggle gravity on/off with the 'Gravity' button</p>   
-     <p align="left">- Make the next ball stay in place by clicking the 'Static' button</p>    
-     <p align="left">- Change the gravity constant by pressing 'Page Up' and 'Page Down' on your keyboard</p>    
+<p align="left">
+    - To throw ball: hold left mouse button - drag across screen - release left mouse button  </br>
+    - The faster you drag, the faster the initial velocity </br>
+    - Use the 'Mass' slider to change the mass of the ball next ball </br>
+    - Turn the 'Static' button on/off to make the next thrown ball not affected/affected by gravity </br> 
+    - Turn gravity on/off with the 'Gravity' button, this will cause balls to bounce off the walls! </br>
+    - Change the gravity constant by pressing 'Page Up' and 'Page Down' on your keyboard</br>  
+    - Press 'Insert' on your keyboard to toggle between balls </br>
+    - Press 'Delete' on your keyboard to delete the toggled ball
+</p>   
+      
     
 </body>
 <script type="text/javascript" src ="GravityApp.js"> </script>
