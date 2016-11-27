@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : David
 */
 
+.controls {
+    display: inline-block;
+}
+
 * { padding: 0; margin: 30; }
 canvas { background: rgba(0, 0, 0, 0.2); display: block; margin: 0 auto; border: 4px solid black;}
 /* The switch - the box around the slider */
